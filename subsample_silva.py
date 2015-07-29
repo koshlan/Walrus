@@ -82,11 +82,11 @@ ref = [] # This is the blank reference list that will grow as novel taxa are dis
 min_length_threshold = r.min_length_threshold#1450
 for record in SeqIO.parse(handle, "fasta") :
     # This rejectes sequences that are not long enough (user specifies min with -min_length flag
-    if len(record.seq) > min_length_threshold: 
+    if len(record.seq) > int(min_length_threshold): 
         #This rejects sequences from uncultured organisms
         if "uncultured" in record.description.split(" ")[1].split(";"):
             continue
-        genus_tree = record.description.split(" ")[1].split(";")[0:r.max_taxa_depth]
+        genus_tree = record.description.split(" ")[1].split(";")[0:int(r.max_taxa_depth)]
         #This rejects sequences Eukaryota Kingdom
         if genus_tree[0] == "Eukaryota":
             continue
