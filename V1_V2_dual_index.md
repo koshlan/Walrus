@@ -86,40 +86,18 @@ And the results show that for the forward token
 * aa : 10%
 * ua : 10%
 * ca : 8%
+* ag : 5%
+
+Recall that the primers are 5'_ _ ------- 3'
+There is no perfect anticomplimentary sequent but TC (i.e UC) is anticomplimentary to all but 3% of the sequences. AT would also be anticomplemetnary to most sequences.
 
 And the results show that for the reverse token
 * ac : 84 %
 * gg : 5 %  
 
+Most of the reverse sequences 5'ac , the linker TA (UA) was anitcomplimentary to all sequences in our subsample.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### Final Steps
+* The final step is visual inspection in Geneious
+* And a visual check against key genus i.e. Dehalococoides
 
