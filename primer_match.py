@@ -57,18 +57,12 @@ for record in SeqIO.parse(handle, "fasta"):
      mr = matches(large_stringRC, r.tokenR, 0.7)
      if mf and mr:
          ohF.write(">%s\n%s\n" %(record.description, mf))
-         ohR.write(">%s\n%s\t%s\n" %(record.description, mr)
-         ohTable.write( mf[0:2] + "\t" +mf + "\t" + mr[0:2] + "\t" mr + "\n")
+         ohR.write(">%s\n%s\n" %(record.description, mr))
+         ohTable.write( mf[0:2] + "\t" +mf + "\t" + mr[0:2] + "\t" + mr + "\n")
          sys.stdout.write(">%s\n%s\n" %(record.description, mf))
-         sys.stdout.write(">%s\n%s\t%s\n" %(record.description, mr)
-         sys.stdout.write(mf[0:2] + "\t" +mf + "\t" + mr[0:2] + "\t" mr + "\n")
+         sys.stdout.write(">%s\n%s\n" %(record.description, mr))
+         sys.stdout.write(mf[0:2] + "\t" +mf + "\t" + mr[0:2] + "\t" + mr + "\n")
 handle.close()        
 ohF.close()
 ohR.close()
-ohTable.close()   
-     #print large_string
-     #print list(matches(large_string, query_string, 0.7))
-#     #print r.token
-
-    
-
+ohTable.close()  
