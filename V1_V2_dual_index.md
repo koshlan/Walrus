@@ -52,6 +52,34 @@ We can check that we get a few important genus:
 
 Next I searched for our primers across the subsample and look at the 2 nucleotides 5' of the primer sequence.
 
+> python primer_match.py -in SILVA_123_SSURef_Nr99_tax_silva.fasta.rep6.fasta
+
+This program has the following input options:
+
+> optional arguments:
+  -h, --help          show this help message and exit
+  -in FASTA_FILENAME
+  -tokenF TOKENF
+  -tokenR TOKENR
+ 
+ * -in flag allows user to specify a fasta file of sequences to search
+ * -tokenF allows user to specify a forward primer sequence I defaulted it here: 27F "GAGUUUGAUCNUGGCUCAG"
+ * -tokenR allows user to specify a reveres primer sequence I defaulted it here: 388R "UGCUGCCUCCCGUAGGAGU" 
+ 
+#####Notes
+
+* tokenR is searched against the reverse complement of the fasta file 
+* three output files are created:
+  * .prefix_table.txt shows the sequences and the prefix sequences
+  * .reverse_matches.fasta (a fasta file with the matching sequence to tokenR)
+  * .forward_matches.fasta (a fasta file with the matching sequences to tokenF)
+
+
+  
+
+
+
+
 
 
 
