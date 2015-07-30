@@ -77,11 +77,22 @@ This program has the following input options:
 Now we can run a simple R command to see the frequency of prefixes. 
 
 > d = read.delim("SILVA_123_SSURef_Nr99_tax_silva.fasta.rep6.fasta.prefix_table.txt", header = F)
-> sort(table(d$V1)/length(d$V1)*100, decreasing=T)
-> sort(table(d$V3)/length(d$V3)*100, decreasing=T)
+sort(table(d$V1)/length(d$V1)*100, decreasing=T)
+sort(table(d$V3)/length(d$V3)*100, decreasing=T)
+
+And the results show that for the forward token 
+* ga : 24%
+* gu : 12%
+* aa : 10%
+* ua : 10%
+* ca : 8%
+
+And the results show that for the reverse token
+* ac : 84 %
+* gg : 5 %  
 
 
-  
+
 
 
 
