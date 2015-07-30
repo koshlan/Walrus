@@ -74,6 +74,12 @@ This program has the following input options:
   * .reverse_matches.fasta (a fasta file with the matching sequence to tokenR)
   * .forward_matches.fasta (a fasta file with the matching sequences to tokenF)
 
+Now we can run a simple R command to see the frequency of prefixes. 
+
+> d = read.delim("SILVA_123_SSURef_Nr99_tax_silva.fasta.rep6.fasta.prefix_table.txt", header = F)
+> sort(table(d$V1)/length(d$V1)*100, decreasing=T)
+> sort(table(d$V3)/length(d$V3)*100, decreasing=T)
+
 
   
 
