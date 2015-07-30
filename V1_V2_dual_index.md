@@ -24,7 +24,11 @@ I downloaded the current non redundant version 123 of the SILVA SSURef database 
 This is an extremeley large file making a primer search computationally expensive. Instead of using the raw file, I wrote a script for sampling the file in a way that ensures roughly repressentative coverage across taxonomic groups. The script makes use of the fact that the SILVA fasta file includes taxonomic decriptions in the header of each sequences:
 > Domain;Kingdom;Phylum;Class;Order;Family;Genus;Species
 
-The basic idea of the subsampler is to walk down the header up to a specified taxonomic level, and only keep the sequence if the header is unique. In this way once a cetertain Genus has been repressented, no futher sequences from that genus will be selected. 
+The basic idea of the subsampler is to walk down the header up to a specified taxonomic level, and only keep the sequence if the header is unique. In this way once a cetertain Genus has been repressented, no futher sequences from that genus will be selected.  To give a sense of why this is useful, consider that there are 4741 sequences repressenting the vibrio genus; whereas when we run the sample we get only 2. 
+
+> grep Vibrio SILVA_123_SSURef_Nr99_tax_silva.fasta | wc -l 
+
+> python subsample_silva.py -in SILVA_123_SSURef_Nr99_tax_silva.fasta -min_length 1480 -max_taxa_depth 6 | grep $">" | grep Vibrio 
 
 #### subsample_silva.py
 
@@ -32,8 +36,21 @@ The basic idea of the subsampler is to walk down the header up to a specified ta
 597607 records
 
 > python subsample_silva.py -in SILVA_123_SSURef_Nr99_tax_silva.fasta -min_length 1480 -max_taxa_depth 6 | grep $">" | wc -l
+594 records
+
+We produce a subsample file:
+
+>python subsample_silva.py -in SILVA_123_SSURef_Nr99_tax_silva.fasta -min_length 1480 -max_taxa_depth 6 > SILVA_123_SSURef_Nr99_tax_silva.fasta.rep6.fasta
+
+We can check that we get a few important genus:
+
+*KC342961.1.1489 Bacteria;Chloroflexi;Dehalococcoidia;Dehalococcoidales;Dehalococcoidaceae;Dehalococcoides;Dehalococcoides mccartyi
+*U40078.1.1655 Bacteria;Firmicutes;Clostridia;Clostridiales;Peptococcaceae;Desulfitobacterium;Desulfitobacterium hafniense
+*U33316.1.1494 Bacteria;Proteobacteria;Deltaproteobacteria;Desulfovibrionales;Desulfovibrionaceae;Desulfovibrio;Desulfovibrio oxyclinae
 
 #### primer_match.py
+
+
 
 
 
