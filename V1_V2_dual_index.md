@@ -26,7 +26,14 @@ This is an extremeley large file making a primer search computationally expensiv
 
 The basic idea of the subsampler is to walk down the header up to a specified taxonomic level, and only keep the sequence if the header is unique. In this way once a cetertain Genus has been repressented, no futher sequences from that genus will be selected. 
 
+#### subsample_silva.py
 
+> grep $">" SILVA_123_SSURef_Nr99_tax_silva.fasta | wc -l 
+597607 records
+
+> python subsample_silva.py -in SILVA_123_SSURef_Nr99_tax_silva.fasta -min_length 1480 -max_taxa_depth 6 | grep $">" | wc -l
+
+#### primer_match.py
 
 
 
