@@ -84,7 +84,7 @@ for record in SeqIO.parse(handle, "fasta") :
     # This rejectes sequences that are not long enough (user specifies min with -min_length flag
     if len(record.seq) > int(min_length_threshold): 
         #This rejects sequences from uncultured organisms
-        if "uncultured" in record.description.split(" ")[1].split(";"):
+        if record.description.find("uncultured") != -1: 
             continue
         genus_tree = record.description.split(" ")[1].split(";")[0:int(r.max_taxa_depth)]
         #This rejects sequences Eukaryota Kingdom
@@ -98,3 +98,4 @@ for record in SeqIO.parse(handle, "fasta") :
         else:
             continue
 handle.close()
+
