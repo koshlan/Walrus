@@ -44,11 +44,17 @@ We produce a subsample file:
 
 We can check that we get a few important genus:
 
-*KC342961.1.1489 Bacteria;Chloroflexi;Dehalococcoidia;Dehalococcoidales;Dehalococcoidaceae;Dehalococcoides;Dehalococcoides mccartyi
-*U40078.1.1655 Bacteria;Firmicutes;Clostridia;Clostridiales;Peptococcaceae;Desulfitobacterium;Desulfitobacterium hafniense
-*U33316.1.1494 Bacteria;Proteobacteria;Deltaproteobacteria;Desulfovibrionales;Desulfovibrionaceae;Desulfovibrio;Desulfovibrio oxyclinae
+* KC342961.1.1489 Bacteria;Chloroflexi;Dehalococcoidia;Dehalococcoidales;Dehalococcoidaceae;Dehalococcoides;Dehalococcoides mccartyi
+* U40078.1.1655 Bacteria;Firmicutes;Clostridia;Clostridiales;Peptococcaceae;Desulfitobacterium;Desulfitobacterium hafniense
+* U33316.1.1494 Bacteria;Proteobacteria;Deltaproteobacteria;Desulfovibrionales;Desulfovibrionaceae;Desulfovibrio;Desulfovibrio oxyclinae
 
 #### primer_match.py
+
+Next I searched for our primers across the subsample and look at the 2 nucleotides 5' of the primer sequence.
+
+
+
+
 
 
 
