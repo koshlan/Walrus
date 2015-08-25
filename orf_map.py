@@ -88,9 +88,5 @@ if __name__ == "__main__":
     # with each org on that contig
     print contig_to_genus(my_contig, contig_to_orf_dict, orf_to_genus_dict)
 
-    # The next example
-    #with open(...) as f:
-    #for line in f:
-    #    <do something with line>
 
 

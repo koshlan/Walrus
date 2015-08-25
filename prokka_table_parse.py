@@ -1,5 +1,4 @@
 __author__ = 'koshlan'
-
 def prokka_table_parse(filename, d1_name = "D.p", d2_name = "Dr.p" , return_dictionaries = False):
     '''
     Koshlan Mayer-Blackwell
