@@ -5,7 +5,8 @@ def fastq_to_fasta_for_oligotype(fastq_file,
                                  sample,
                                  fix_length = True,
                                  fixed_length = None,
-                                 quality_exclude = True):
+                                 quality_exclude = True,
+                                 verbose = True):
     from Bio import SeqIO
     import sys
     class EmptyArgs(StandardError):
@@ -44,17 +45,18 @@ def fastq_to_fasta_for_oligotype(fastq_file,
                 quality_excluded = quality_excluded + 1
                 continue
         passed = passed + 1
-        #sys.stdout.write(">Sample%s_Read%i\n%s\n"%(sample,count, record.seq))
+        sys.stdout.write(">Sample%s_Read%i\n%s\n"%(sample,count, record.seq))
 
-    sys.stderr.write("\t# %s was processed by fastq_to_fasta.py\n"%(sample))
-    sys.stderr.write("\t# fix_length == %s\n" %(fix_length))
-    sys.stderr.write("\t# quality_exclude == %s\n" %(quality_exclude))
-    sys.stderr.write("\t# Number of reads failing length check %i \n"
-                     %(length_excluded))
-    sys.stderr.write("\t# Number of reads failing quality check %i \n"
-                     %(quality_excluded))
-    sys.stderr.write("\t# Number of reads passing length and quality "
-                     "filters: %i of %i \n" %(passed,count))
+    if verbose:
+        sys.stderr.write("\t# %s was processed by fastq_to_fasta.py\n"%(sample))
+        sys.stderr.write("\t# fix_length == %s\n" %(fix_length))
+        sys.stderr.write("\t# quality_exclude == %s\n" %(quality_exclude))
+        sys.stderr.write("\t# Number of reads failing length check %i \n"
+                         %(length_excluded))
+        sys.stderr.write("\t# Number of reads failing quality check %i \n"
+                         %(quality_excluded))
+        sys.stderr.write("\t# Number of reads passing length and quality "
+                         "filters: %i of %i \n" %(passed,count))
 
 if __name__ == "__main__":
     example_file = "/Volumes/NO_NAME/Aug2015_HupMiSeq/Stitched/HupAmp1_S10_L001_R1_001.fastq"
